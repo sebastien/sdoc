@@ -13,11 +13,12 @@
 #             03-Avr-2006 - First implementation
 # -----------------------------------------------------------------------------
 
-import sys ; sys.path.insert(0, "Sources")
-import sdoc.main as main
 from distutils.core import setup
+import sdoc.main as main
+import sys
+sys.path.insert(0, "Sources")
 
-SUMMARY     = "SmallTalk-like Python API documenter"
+SUMMARY = "SmallTalk-like Python API documenter"
 DESCRIPTION = """\
 SDoc produces an interactive, JavaScript-based API documentation that resembles
 to the way class navigation is made in SmallTalk. SDoc page design is loosely
@@ -32,18 +33,18 @@ the projet.\
 # ------------------------------------------------------------------------------
 
 setup(
-    name         = "SDoc",
-    version      = main.__version__,
+    name="sdoc",
+    version=main.__version__,
 
-    author       = "Sebastien Pierre", author_email = "sebastien@ivy.fr",
-    description   = SUMMARY, long_description  = DESCRIPTION,
-    license      = "Revised BSD License",
-    keywords     = "API, documentation, generator, html, javascript",
-    url          = "http://www.ivy.fr/sdoc",
-    package_dir  = { "": "Sources" },
-    packages     = ["sdoc"],
-    package_data = { "sdoc": ["*.tmpl"] },
-    scripts      = ["Scripts/sdoc"]
+    author="Sebastien Pierre", author_email="sebastien@ivy.fr",
+    description=SUMMARY, long_description=DESCRIPTION,
+    license="Revised BSD License",
+    keywords="API, documentation, generator, html, javascript",
+    url="https://github.com/sebastien/sdoc",
+    package_dir={"": "src/py"},
+    packages=["sdoc"],
+    package_data={"sdoc": ["*.tmpl"]},
+    scripts=["bin/sdoc"]
 )
 
 # EOF
